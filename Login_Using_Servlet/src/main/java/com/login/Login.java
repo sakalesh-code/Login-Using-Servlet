@@ -8,9 +8,9 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
-@WebServlet("/")
+@WebServlet("/Login")
 public class Login extends HttpServlet {
-	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException {
+	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException {
 		String uname = req.getParameter("user");
 		String password = req.getParameter("pass");
 

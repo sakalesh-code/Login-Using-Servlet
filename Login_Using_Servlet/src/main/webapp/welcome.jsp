@@ -8,6 +8,9 @@
 </head>
 <body>
 	<%
+	response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate"); // Prevent caching
+	response.setHeader("Pragma", "no-cache"); // For older HTTP/1.0 clients
+	response.setHeader("Expires", "0"); // Expiration date in the past
 	if (session.getAttribute("uname") == null) {
 		response.sendRedirect("login.jsp");
 	}

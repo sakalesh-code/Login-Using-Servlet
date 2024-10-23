@@ -8,10 +8,13 @@
 </head>
 <body>
 <%
+response.setHeader("Cache-Control", "no-store, no-cache, must-revalidate"); // Prevent caching
+response.setHeader("Pragma", "no-cache"); // For older HTTP/1.0 clients
+response.setHeader("Expires", "0"); // Expiration date in the past
 	if (session.getAttribute("uname") == null) {
 		response.sendRedirect("login.jsp");
 	}
 	%>
-https://www.youtube.com/watch?v=cYc3FjhMMzI&list=PLsyeobzWxl7pUPF2xjjJiG4BKC9x_GY46&index=32
+<iframe width="560" height="315" src="https://www.youtube.com/embed/gQLQ0t9B5yk?si=KuhLzQ0yYbdpRLHF" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 </body>
 </html>
